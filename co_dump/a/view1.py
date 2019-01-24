@@ -32,7 +32,7 @@ def main(win):
 	nLoops = 0;
 	while 1:          
 		try:                 
-			win.timeout ( 100 )
+			win.timeout ( 10 )
 			key = win.getkey()         
 			win.addstr( 2, 0, "Detected key: " + str ( key ) );
 			if key == 'q':
@@ -40,7 +40,7 @@ def main(win):
 		except Exception as e:
 			pass         
 		try:
-			message, priority = mq.receive ( timeout = 0.25 )
+			message, priority = mq.receive ( timeout = 0.05 )
 			win.addstr( 3, 0, "message: " + message.decode() );
 			win.clrtoeol();
 		except posix_ipc.BusyError:
