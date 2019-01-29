@@ -1,18 +1,14 @@
 # Python modules
 import sys
 import random
-import signal
 
 # 3rd party modules
 import posix_ipc
 
-# Utils for this demo
-import utils
-
-MY_SIGNAL = signal.SIGUSR1
+QUEUE_NAME = "/my_message_queue"
 
 #	Open the message queue.
-mq = posix_ipc.MessageQueue(utils.QUEUE_NAME )
+mq = posix_ipc.MessageQueue(QUEUE_NAME )
 
 #	file_name = '/home/brad/dev/fork/cpython/Lib/threading.py'
 filename	= sys.argv[1];

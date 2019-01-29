@@ -17,18 +17,19 @@ def show_lines ( lineno ):
 	global scr, hw, lines, nlines, itop
 	h = hw[0] - 4
 	w = hw[1]
+	h2 = h // 2;
 	h4 = h // 4;
 
 	lowbnd = h - h4;	#	lowest (in the view) highlighted line
 
 	if lineno - itop <= 0:
-		start = itop = lineno - h4
+		start = itop = lineno - h2
 		if start < 0:
 			start = itop = 0;
 	else:
 		if (lineno - itop) > lowbnd:
 			#start = lineno - lowbnd
-			start = itop = lineno - h4
+			start = itop = lineno - h2
 		else:
 			#start = 0
 			start = itop
